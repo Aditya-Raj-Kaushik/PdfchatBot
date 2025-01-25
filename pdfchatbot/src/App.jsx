@@ -1,10 +1,14 @@
-import { Button } from "@/components/ui/button"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-export default function Home() {
+function App() {
   return (
-    <div>
-      <h1 className="font-outfit text-xl">Hello</h1>
-      <Button>Click me</Button>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* Add other routes as needed */}
+      </Routes>
+    </Router>
+  );
 }
+
+
