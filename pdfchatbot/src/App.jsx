@@ -1,14 +1,16 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 export default function App() {
   return (
-    <header>
-      <SignedOut>
-        <SignInButton mode="modal" />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </header>
+    <Router>
+      <Routes>
+        <Route path="login" element={<Login />} />
+        <Route path="/" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 }
